@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Cabecalho from "./components/Cabecalho";
 import Container from "./components/Container";
 import Rodape from "./components/Rodape";
@@ -12,9 +12,11 @@ function App() {
       <Router>
         <Cabecalho />
         <Container>
-          <Home />
-          <Produtos />
-          <Contato />
+          <Routes>
+            <Route Component={Home} />
+            <Route Component={Produtos} />
+            <Route Component={Contato} />
+          </Routes>
         </Container>
         <Rodape />
       </Router>
