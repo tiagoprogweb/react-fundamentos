@@ -1,8 +1,24 @@
+import { useState } from "react";
 import cursos from "../api/cursos";
 import Artigo from "./Artigo";
 import styled from "styled-components";
 
 function Conteudo() {
+  const [categoria, setCategoria] = useState(null);
+
+  const aplicarFiltro = (event) => {
+    const categoriaEscolhida = event.currentTarget.innerText;
+    // alert(categoriaEscolhida);
+    // setCategoria(categoriaEscolhida);
+    setCategoria((categoriaAtual) =>
+      categoriaAtual === categoriaEscolhida ? null : categoriaEscolhida
+    );
+  };
+
+  const cursosFiltrados = cursos.filter(
+    (curso) => categoria === null || curso.categoria === categoria
+  );
+
   return (
     <StyledConteudo>
       <h2>Conteúdo da aplicação</h2>
@@ -16,12 +32,19 @@ function Conteudo() {
 
       <div className="filtros">
         <p>
-          <b>Filtrar por:</b> <button>Front-End</button>
+          <b>Filtrar por: </b>
+          <button onClick={aplicarFiltro}>Front-End</button>
+          <button onClick={aplicarFiltro}>Back-End</button>
+          <button onClick={aplicarFiltro}>Mobile</button>
+          <button onClick={aplicarFiltro}>Design</button>
+          <button onClick={aplicarFiltro}>Engenharia</button>
+          <button onClick={aplicarFiltro}>Gastronomia</button>
         </p>
+        {categoria && <p>Escolhido: {categoria}</p>}
       </div>
 
       <div className="artigos">
-        {cursos.map((curso) => (
+        {cursosFiltrados.map((curso) => (
           <Artigo
             key={curso.id}
             categoria={curso.categoria}
@@ -51,6 +74,10 @@ const StyledConteudo = styled.main`
     padding: 1rem 0;
     border-top: solid 2px;
     border-bottom: solid 2px;
+  }
+
+  .filtros button {
+    margin: 0.5rem;
   }
 
   @media screen and (min-width: 650px) {
