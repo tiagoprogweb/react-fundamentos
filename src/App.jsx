@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Cabecalho from "./components/Cabecalho";
 import Container from "./components/Container";
 import Rodape from "./components/Rodape";
@@ -9,7 +9,7 @@ import Produtos from "./pages/Produtos";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Cabecalho />
         <Container>
           <Home />
@@ -17,7 +17,7 @@ function App() {
           <Contato />
         </Container>
         <Rodape />
-      </BrowserRouter>
+      </Router>
     </>
   );
 }
