@@ -31,6 +31,14 @@ function Conteudo() {
     return acumulador + curso.preco;
   }, 0);
 
+  const quantidade = cursosFiltrados.length;
+
+  /* ANOTAÇÃO PRA MIM NUM FUTURO PRÓXIMO:
+ESSA PARTE DA QUANTIDADE E DA SOMA, PODE SER UM BOM
+EXEMPLO PRA APLICAR USEEFFECT QUANDO SE TRABALHAR COM DADOS VINDOS
+DE UMA API, EM QUE O ASSINCRONO PODE IMPACTAR NO CARREGAMENTO E EXIBIÇÃO
+DA SOMA E DA QUANTIDADE. */
+
   return (
     <StyledConteudo>
       <h2>Conteúdo da aplicação</h2>
@@ -57,9 +65,15 @@ function Conteudo() {
         </p>
         {categoria && <p>Escolhido: {categoria}</p>}
         <p>Total dos preços: {formatarPreco(somaValores)}</p>
+        <p>Quantidade de cursos: {quantidade}</p>
       </div>
 
       <div className="artigos">
+        {quantidade === 0 && (
+          <p style={{ color: "red", textAlign: "center" }}>
+            <b>Não há cursos desta categoria!</b>
+          </p>
+        )}
         {cursosFiltrados.map((curso) => (
           <Artigo
             key={curso.id}
