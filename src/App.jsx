@@ -5,6 +5,7 @@ import Rodape from "./components/Rodape";
 import Contato from "./pages/Contato";
 import Home from "./pages/Home";
 import Produtos from "./pages/Produtos";
+import Pagina404 from "./pages/Pagina404";
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
         <Cabecalho />
         <Container>
           <Routes>
-            <Route Component={Home} />
-            <Route Component={Produtos} />
-            <Route Component={Contato} />
+            <Route Component={Home} exact path="/" />
+            <Route Component={Produtos} path="/produtos" />
+            <Route Component={Contato} path="/contato" />
+            <Route Component={Pagina404} path="*" />
           </Routes>
         </Container>
         <Rodape />
