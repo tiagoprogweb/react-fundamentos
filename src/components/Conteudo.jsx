@@ -14,8 +14,6 @@ function Conteudo() {
     // setCategoria((categoriaAtual) =>
     //   categoriaAtual === categoriaEscolhida ? null : categoriaEscolhida
     // );
-
-    // setTotal(somaValores);
   };
 
   const limparFiltro = () => {
@@ -52,12 +50,42 @@ DA SOMA E DA QUANTIDADE. */
       <div className="filtros">
         <p>
           <b>Filtrar por: </b>
-          <button onClick={aplicarFiltro}>Front-End</button>
-          <button onClick={aplicarFiltro}>Back-End</button>
-          <button onClick={aplicarFiltro}>Mobile</button>
-          <button onClick={aplicarFiltro}>Design</button>
-          <button onClick={aplicarFiltro}>Engenharia</button>
-          <button onClick={aplicarFiltro}>Gastronomia</button>
+          <button
+            className={categoria === "Front-End" ? "ativo" : ""}
+            onClick={aplicarFiltro}
+          >
+            Front-End
+          </button>
+          <button
+            className={categoria === "Back-End" ? "ativo" : ""}
+            onClick={aplicarFiltro}
+          >
+            Back-End
+          </button>
+          <button
+            className={categoria === "Mobile" ? "ativo" : ""}
+            onClick={aplicarFiltro}
+          >
+            Mobile
+          </button>
+          <button
+            className={categoria === "Design" ? "ativo" : ""}
+            onClick={aplicarFiltro}
+          >
+            Design
+          </button>
+          <button
+            className={categoria === "Engenharia" ? "ativo" : ""}
+            onClick={aplicarFiltro}
+          >
+            Engenharia
+          </button>
+          <button
+            className={categoria === "Gastronomia" ? "ativo" : ""}
+            onClick={aplicarFiltro}
+          >
+            Gastronomia
+          </button>
           {categoria && (
             <button onClick={limparFiltro}>🧹 Limpar filtros</button>
           )}
@@ -107,6 +135,11 @@ const StyledConteudo = styled.main`
 
   .filtros button {
     margin: 0.5rem;
+  }
+
+  .filtros .ativo {
+    background-color: black;
+    color: white;
   }
 
   @media screen and (min-width: 650px) {
