@@ -1,12 +1,13 @@
 /* Menu.jsx */
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 function Menu() {
   return (
     <StyledMenu>
-      <a href="/">Home</a>
-      <a href="/produtos">Produtos</a>
-      <a href="/contato">Contato</a>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/produtos">Produtos</NavLink>
+      <NavLink to="/contato">Contato</NavLink>
     </StyledMenu>
   );
 }
