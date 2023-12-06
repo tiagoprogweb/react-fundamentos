@@ -1,5 +1,9 @@
 function Produtos() {
-  return <h2>Produtos</h2>;
+  return (
+    <section>
+      <h2>Produtos</h2>
+    </section>
+  );
 }
 
 export default Produtos;

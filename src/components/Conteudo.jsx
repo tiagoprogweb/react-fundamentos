@@ -110,7 +110,7 @@ DA SOMA E DA QUANTIDADE. */
   );
 }
 
-const StyledConteudo = styled.main`
+const StyledConteudo = styled.section`
   .filtros {
     margin: 1rem 0;
     padding: 1rem 0;
