@@ -2,9 +2,11 @@ import { useState } from "react";
 import cursos from "../api/cursos";
 import Artigo from "./Artigo";
 import styled from "styled-components";
+import { formatarPreco } from "../utils/funcoes";
 
 function Conteudo() {
   const [categoria, setCategoria] = useState(null);
+  const [total, setTotal] = useState(0);
 
   const aplicarFiltro = (event) => {
     const categoriaEscolhida = event.currentTarget.innerText;
@@ -13,6 +15,8 @@ function Conteudo() {
     // setCategoria((categoriaAtual) =>
     //   categoriaAtual === categoriaEscolhida ? null : categoriaEscolhida
     // );
+
+    // setTotal(somaValores);
   };
 
   const limparFiltro = () => {
@@ -22,6 +26,10 @@ function Conteudo() {
   const cursosFiltrados = cursos.filter(
     (curso) => categoria === null || curso.categoria === categoria
   );
+
+  const somaValores = cursosFiltrados.reduce((acumulador, curso) => {
+    return acumulador + curso.preco;
+  }, 0);
 
   return (
     <StyledConteudo>
@@ -48,6 +56,7 @@ function Conteudo() {
           )}
         </p>
         {categoria && <p>Escolhido: {categoria}</p>}
+        <p>Total dos preços: {formatarPreco(somaValores)}</p>
       </div>
 
       <div className="artigos">

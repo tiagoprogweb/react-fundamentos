@@ -1,18 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { formatarPreco } from "../utils/funcoes";
 
 function Artigo(props) {
   const [cor, setCor] = useState("lavender");
 
   const mudarCor = () => {
     setCor(cor === "lavender" ? "yellow" : "lavender");
-  };
-
-  const formatarPreco = (valor) => {
-    return valor.toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
   };
 
   return (
