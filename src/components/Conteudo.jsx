@@ -6,7 +6,6 @@ import { formatarPreco } from "../utils/funcoes";
 
 function Conteudo() {
   const [categoria, setCategoria] = useState(null);
-  const [total, setTotal] = useState(0);
 
   const aplicarFiltro = (event) => {
     const categoriaEscolhida = event.currentTarget.innerText;
