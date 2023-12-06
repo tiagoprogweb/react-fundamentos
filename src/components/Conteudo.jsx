@@ -9,11 +9,7 @@ function Conteudo() {
 
   const aplicarFiltro = (event) => {
     const categoriaEscolhida = event.currentTarget.innerText;
-    // alert(categoriaEscolhida);
     setCategoria(categoriaEscolhida);
-    // setCategoria((categoriaAtual) =>
-    //   categoriaAtual === categoriaEscolhida ? null : categoriaEscolhida
-    // );
   };
 
   const limparFiltro = () => {
