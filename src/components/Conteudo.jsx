@@ -14,6 +14,12 @@ function Conteudo() {
         expedita aspernatur.
       </p>
 
+      <div className="filtros">
+        <p>
+          <b>Filtrar por:</b> <button>Front-End</button>
+        </p>
+      </div>
+
       <div className="artigos">
         {cursos.map((curso) => (
           <Artigo
@@ -38,6 +44,13 @@ const StyledConteudo = styled.main`
   h2,
   p {
     padding: 0.2rem 0;
+  }
+
+  .filtros {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
   }
 
   @media screen and (min-width: 650px) {
