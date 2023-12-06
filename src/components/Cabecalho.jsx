@@ -16,7 +16,7 @@ function Cabecalho() {
   const mudarTitulo = () => {
     /* Alterando o valor do state 'titulo' através
     do 'setTitulo' quando ocorre o evento de clique no h1. */
-    setTitulo(titulo == "Olá React! 😎" ? "Oie! 🤩" :"Olá React! 😎" );
+    setTitulo(titulo == "Olá React! 😎" ? "Oie! 🤩" : "Olá React! 😎");
   };
 
   return (
@@ -34,6 +34,8 @@ const StyledCabecalho = styled.header`
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
+  position: sticky;
+  top: 0;
 
   hr {
     width: 50%;
