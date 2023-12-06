@@ -1,5 +1,7 @@
+import Conteudo from "../components/Conteudo";
+
 function Home() {
-  return <h2>Home</h2>;
+  return <Conteudo />;
 }
 
 export default Home;

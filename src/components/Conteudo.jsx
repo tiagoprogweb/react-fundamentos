@@ -111,17 +111,6 @@ DA SOMA E DA QUANTIDADE. */
 }
 
 const StyledConteudo = styled.main`
-  width: 90vw;
-  margin: 1rem auto;
-  background-color: aliceblue;
-  padding: 1rem;
-  box-shadow: darkblue 0 0 1px inset;
-
-  h2,
-  p {
-    padding: 0.2rem 0;
-  }
-
   .filtros {
     margin: 1rem 0;
     padding: 1rem 0;
