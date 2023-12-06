@@ -9,10 +9,14 @@ function Conteudo() {
   const aplicarFiltro = (event) => {
     const categoriaEscolhida = event.currentTarget.innerText;
     // alert(categoriaEscolhida);
-    // setCategoria(categoriaEscolhida);
-    setCategoria((categoriaAtual) =>
-      categoriaAtual === categoriaEscolhida ? null : categoriaEscolhida
-    );
+    setCategoria(categoriaEscolhida);
+    // setCategoria((categoriaAtual) =>
+    //   categoriaAtual === categoriaEscolhida ? null : categoriaEscolhida
+    // );
+  };
+
+  const limparFiltro = () => {
+    setCategoria(null);
   };
 
   const cursosFiltrados = cursos.filter(
@@ -39,6 +43,9 @@ function Conteudo() {
           <button onClick={aplicarFiltro}>Design</button>
           <button onClick={aplicarFiltro}>Engenharia</button>
           <button onClick={aplicarFiltro}>Gastronomia</button>
+          {categoria && (
+            <button onClick={limparFiltro}>🧹 Limpar filtros</button>
+          )}
         </p>
         {categoria && <p>Escolhido: {categoria}</p>}
       </div>
