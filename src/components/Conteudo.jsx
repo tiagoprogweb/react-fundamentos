@@ -1,34 +1,6 @@
-/* Importação dos dados da "api de mentirinha" */
 import cursos from "../api/cursos";
-
 import Artigo from "./Artigo";
 import styled from "styled-components";
-
-const StyledConteudo = styled.main`
-  width: 90vw;
-  margin: 1rem auto;
-  background-color: aliceblue;
-  padding: 1rem;
-  box-shadow: darkblue 0 0 1px inset;
-
-  h2,
-  p {
-    padding: 0.2rem 0;
-  }
-
-  @media screen and (min-width: 650px) {
-    .artigos {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-
-      & article {
-        width: 48%;
-        margin: 1%;
-      }
-    }
-  }
-`;
 
 function Conteudo() {
   return (
@@ -55,5 +27,31 @@ function Conteudo() {
     </StyledConteudo>
   );
 }
+
+const StyledConteudo = styled.main`
+  width: 90vw;
+  margin: 1rem auto;
+  background-color: aliceblue;
+  padding: 1rem;
+  box-shadow: darkblue 0 0 1px inset;
+
+  h2,
+  p {
+    padding: 0.2rem 0;
+  }
+
+  @media screen and (min-width: 650px) {
+    .artigos {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      & article {
+        width: 48%;
+        margin: 1%;
+      }
+    }
+  }
+`;
 
 export default Conteudo;
